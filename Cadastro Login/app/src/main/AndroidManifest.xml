@@ -3,6 +3,7 @@
     package="br.com.matheus_candido.tela_login">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
 
     <application
         android:usesCleartextTraffic="true"

@@ -1,15 +1,20 @@
 package br.com.matheus_candido.tela_login
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.graphics.Bitmap
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.MediaStore
 import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_cadastro_activity.*
 
 class CadastroActivity : AppCompatActivity() {
+
+    val REQUEST_CAMERA = 100
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -92,6 +97,29 @@ class CadastroActivity : AppCompatActivity() {
                     .show()
             }
 
+        }
+
+        imvFoto.setOnClickListener {
+            val intentCamera = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
+            startActivityForResult(intentCamera, REQUEST_CAMERA)
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if(requestCode == REQUEST_CAMERA) {
+            if(resultCode == Activity.RESULT_OK) {
+
+                // Desembrulhando com segurança(validação not null)
+                data?.let {
+
+                    // Desenbrulho forçado !!
+                    //.get("data") é o retorno do extras
+                    val bitmap = it.extras!!.get("data") as Bitmap
+                    imvFoto.setImageBitmap(bitmap)
+                }
+            }
         }
     }
 }

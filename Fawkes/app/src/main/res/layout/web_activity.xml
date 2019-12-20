@@ -4,79 +4,82 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000"
+    android:background="#E2000000"
+    android:backgroundTint="#070303"
     tools:context=".WebActivity">
 
-    <ImageButton
-        android:id="@+id/btnAvancar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="239dp"
-        android:background="#000000"
-        android:src="@drawable/ic_arrow_forward_black_24dp"
-        app:layout_constraintEnd_toStartOf="@+id/btnPesquisar"
-        app:layout_constraintStart_toEndOf="@+id/btnVoltar"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
-        android:id="@+id/btnAtt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="19dp"
-        android:background="#000000"
-        android:src="@drawable/ic_autorenew_black_24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnPesquisar"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageButton
+    <ImageView
         android:id="@+id/btnVoltar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="19dp"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="19dp"
-        android:background="#000000"
-        android:backgroundTint="#000000"
-        android:src="@drawable/ic_arrow_back_black_24dp"
-        app:layout_constraintEnd_toStartOf="@+id/btnAvancar"
+        android:layout_width="35dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnAvançar"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_keyboard_arrow_left_black_24dp" />
 
-    <ImageButton
+    <ImageView
+        android:id="@+id/btnRefresh"
+        android:layout_width="41dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnPesquisar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_loop_black_24dp" />
+
+    <ImageView
         android:id="@+id/btnPesquisar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:layout_marginEnd="19dp"
-        android:background="#000"
-        android:src="@drawable/ic_search_black_24dp"
-        app:layout_constraintEnd_toStartOf="@+id/btnAtt"
-        app:layout_constraintStart_toEndOf="@+id/btnAvancar"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/inpBusca"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="7dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintStart_toStartOf="@+id/wbvWeb"
-        app:layout_constraintTop_toBottomOf="@+id/btnVoltar" />
+        android:layout_width="38dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/btnRefresh"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/Inpbusca"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_search_black_24dp" />
 
     <WebView
-        android:id="@+id/wbvWeb"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/wbweb"
+        android:layout_width="428dp"
+        android:layout_height="674dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/inpBusca">
+        app:layout_constraintTop_toBottomOf="@+id/Inpbusca" />
 
-    </WebView>
+    <EditText
+        android:id="@+id/Inpbusca"
+        android:layout_width="213dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border_radius"
+        android:ems="10"
+        android:hint="Digite a URL "
+        android:inputType="textPersonName"
+        android:lineSpacingExtra="8sp"
+        android:paddingStart="10dp"
+        android:textColorHint="#F2000000"
+        app:layout_constraintEnd_toStartOf="@+id/btnPesquisar"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnAvançar"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/btnAvançar"
+        android:layout_width="35dp"
+        android:layout_height="33dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/Inpbusca"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnVoltar"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_keyboard_arrow_right_black_24dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
